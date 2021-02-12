@@ -24,13 +24,23 @@ public class DataService {
 	
 	//returns the infection rise of the last 24 hours
 	public int getInfectionRise() {
-		return 0;
+		return ((country.getGermany().get((country.getGermany().size()) - 1).getConfirmed()) 
+			   - (country.getGermany().get((country.getGermany().size()) - 1).getRecovered()))
+					- ((country.getGermany().get((country.getGermany().size()) - 2).getConfirmed())
+					- (country.getGermany().get((country.getGermany().size()) - 2).getRecovered()));
 	}
 	
 	//returns the average infection rise of the last n days
-	public int getAverageInfectionRise(int days) {
+	public float getAverageInfectionRise(int days) {
+		float averageInfectionRise = 0;
 		
-		return 0;
+		for(int i = 0; i < days; i++) {
+			averageInfectionRise += ((country.getGermany().get((country.getGermany().size()) - (i + 1)).getConfirmed()) 
+									- (country.getGermany().get((country.getGermany().size()) - (i + 1)).getRecovered()))
+										- ((country.getGermany().get((country.getGermany().size()) - (i + 2)).getConfirmed()) 
+										- (country.getGermany().get((country.getGermany().size()) - (i + 2)).getRecovered()));
+		}
+		return averageInfectionRise / days;
 	}
 	
 }
