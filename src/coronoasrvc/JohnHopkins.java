@@ -9,11 +9,10 @@ import com.google.gson.Gson;
 public class JohnHopkins {
 	
 	private Country country;
-	private String json;
 	
 	public JohnHopkins() throws Exception {
 		
-		json = readUrl("https://pomber.github.io/" + "covid19/timeseries.json");
+		String json = readUrl("https://pomber.github.io/" + "covid19/timeseries.json");
 		
 		Gson gson = new Gson();
 		country = gson.fromJson(json, Country.class);

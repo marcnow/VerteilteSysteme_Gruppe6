@@ -7,6 +7,9 @@ public class Country {
 	private String countryName = "Germany";
     private List<CovidData> Germany;
     
+    public Country() {
+    }
+    
 	public String getCountryName() {
 		return countryName;
 	}

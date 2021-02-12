@@ -7,6 +7,9 @@ public class CovidData {
     private int deaths;
     private int recovered;
     
+    public CovidData() {
+    }
+    
 	public String getDate() {
 		return date;
 	}
