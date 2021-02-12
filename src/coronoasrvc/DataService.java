@@ -21,7 +21,8 @@ public class DataService {
 	
 	//returns the total infections
 	public int getTotalInfections() {
-		return country.getGermany().get((country.getGermany().size()) - 1).getConfirmed();
+		return ((country.getGermany().get((country.getGermany().size()) - 1).getConfirmed()) 
+				   - (country.getGermany().get((country.getGermany().size()) - 1).getRecovered()));
 	}
 	
 	//returns the infection rise of the last 24 hours
@@ -62,8 +63,8 @@ public class DataService {
 	}
 	
 	//returns the days of necessary days of lockdown
-	public float getDaysOfLockdown() {
-		return (getTotalInfections() - getTargetTotalInfections()) / getAverageInfectionRise(3);
+	public float getDaysOfLockdown(int days) {
+		return (getTotalInfections() - getTargetTotalInfections()) / getAverageInfectionRise(days);
 	}
 	
 	public float getAverageNewInfectionRise(int days) {
