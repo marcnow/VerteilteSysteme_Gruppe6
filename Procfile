@@ -1,1 +1,1 @@
-web: java -jar target/VerteilteSysteme_Gruppe6.jar
+web: java -cp target/classes/:target/dependency/*
