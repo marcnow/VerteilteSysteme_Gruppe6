@@ -8,7 +8,7 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-		/**
+		
 		try {
 			TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new Herbert_Bot());
@@ -17,7 +17,7 @@ public class Main {
         } catch (TelegramApiException e) {
         	e.printStackTrace();
         }
-		**/
+		
 		
 		
 		DataService ds = new DataService();
