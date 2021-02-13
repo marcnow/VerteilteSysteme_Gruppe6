@@ -8,7 +8,7 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-		/**
+		
 		try {
 			TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new Herbert_Bot());
@@ -17,9 +17,9 @@ public class Main {
         } catch (TelegramApiException e) {
         	e.printStackTrace();
         }
-		**/
 		
 		
+		/**
 		DataService ds = new DataService();
 		System.out.println("Neuinfektionen der letzten 24 Stunden: " + ds.getNewInfections());
 		System.out.println("Gesamtinfektionen: " + ds.getTotalInfections());
@@ -29,6 +29,6 @@ public class Main {
 		System.out.println("r-Wert für Gesamtdeutschland: " + ds.getIncidenceValue());
 		System.out.println("Ziel-Gesamtinfektion: " + ds.getTargetTotalInfections());
 		System.out.println("Notwendige Tage des Lockdowns: " + ds.getDaysOfLockdown());
-		
+		**/
 	}
 }
