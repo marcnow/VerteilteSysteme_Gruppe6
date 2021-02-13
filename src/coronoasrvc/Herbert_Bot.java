@@ -28,7 +28,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 			else if(command.equals("/neuinfektionen")) {
 				System.out.println(update.getMessage().getText());
 				
-				message.setText("Von gestern auf heute haben sich " + ds.getNewInfections()  +  " Leute neu mit Corona infiziert");
+				message.setText("Von gestern auf heute haben sich " + ds.getNewInfections()  + " Leute neu mit Corona infiziert");
 			}
 			
 			else if(command.equals("/gesamtinfektionen")) {
