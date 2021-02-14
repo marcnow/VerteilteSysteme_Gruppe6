@@ -4,11 +4,13 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+import com.google.gson.Gson;
+
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-		
+		/**
 		try {
 			TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new Herbert_Bot());
@@ -17,18 +19,21 @@ public class Main {
         } catch (TelegramApiException e) {
         	e.printStackTrace();
         }
-		
-		
-		/**
-		DataService ds = new DataService();
-		System.out.println("Neuinfektionen der letzten 24 Stunden: " + ds.getNewInfections());
-		System.out.println("Gesamtinfektionen: " + ds.getTotalInfections());
-		System.out.println("Anstieg der letzten 24h: " + ds.getInfectionRise());
-		System.out.println("Durchschnittlicher Anstieg der letzten 3 Tage: " + ds.getAverageInfectionRise(3));
-		
-		System.out.println("r-Wert für Gesamtdeutschland: " + ds.getIncidenceValue());
-		System.out.println("Ziel-Gesamtinfektion: " + ds.getTargetTotalInfections());
-		System.out.println("Notwendige Tage des Lockdowns: " + ds.getDaysOfLockdown());
 		**/
+		
+		
+		DataService ds = new DataService();
+		CovidKeyIndicators covidKeyIndicators = new CovidKeyIndicators(ds.getNewInfections(), 
+																	   ds.getTotalInfections(),
+																	   ds.getInfectionRise(),
+																	   ds.getAverageInfectionRise(3),
+																	   ds.getIncidenceValue(),
+																	   ds.getTargetTotalInfections(),
+																	   ds.getDaysOfLockdown());
+		
+		Gson gson = new Gson();
+		String json = gson.toJson(covidKeyIndicators);
+		
+		System.out.println(json);
 	}
 }

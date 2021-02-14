@@ -64,7 +64,7 @@ public class DataService {
 	
 	//returns the days of necessary days of lockdown
 	public float getDaysOfLockdown() {
-		return (getTotalInfections() - getTargetTotalInfections()) / getAverageInfectionRise(3);
+		return (getTotalInfections() - getTargetTotalInfections()) / getAverageInfectionRise(7);
 	}
 	
 	public float getAverageNewInfectionRise(int days) {
